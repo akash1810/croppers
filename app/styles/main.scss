@@ -1,0 +1,30 @@
+// bower:scss
+// endbower
+
+body {
+  background: #fafafa;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333;
+}
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+.image {
+  max-width: 500px;
+  max-height: 500px;
+
+  img {
+    max-width: inherit;
+    max-height: inherit;
+  }
+}
+
+#jcrop-image {
+  width: 500px;
+  display: inline-block;
+}
