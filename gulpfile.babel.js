@@ -163,10 +163,21 @@ gulp.task('wiredep', () => {
     .pipe(gulp.dest('app'));
 });
 
-gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
+gulp.task('jcrop', () => {
+  return gulp.src('bower_components/Jcrop/css/Jcrop.gif')
+    .pipe(gulp.dest('dist/styles'));
+});
+
+gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras', 'jcrop'], () => {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 
 gulp.task('default', ['clean'], () => {
   gulp.start('build');
+});
+
+gulp.task('deploy', ['build'], () => {
+  return gulp.src('dist')
+    .pipe($.subtree())
+    .pipe($.clean());
 });
