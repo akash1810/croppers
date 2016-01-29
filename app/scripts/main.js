@@ -41,7 +41,7 @@ $(function () {
     const table = getTable('jcrop-data');
 
     const options = {
-      onChange: (data) => {
+      onSelect: (data) => {
         table.x0.innerHTML = data.x;
         table.x1.innerHTML = data.x2;
         table.y0.innerHTML = data.y;
